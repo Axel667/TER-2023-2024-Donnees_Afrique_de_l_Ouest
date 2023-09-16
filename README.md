@@ -12,3 +12,13 @@ Guilhem DARDE : guilhem.darde@etu.univ-montp3.fr
 Anta Claude NDJINGA NDJINGA : ndjinga-ndjinga.anta-claude@etu.univ-montp3.fr
 Axel CAROT : axel.carot-gelas@etu.univ-montp3.fr
 Ivan CAN ARISOY : ivan-can.arisoy@etu.univ-montp3.fr
+
+## Outils collaboratifs
+
+# overleaf
+https://fr.overleaf.com
+Overleaf est un éditeur de texte en ligne qui permet aux utilisateurs de collaborer sur des documents LaTeX, un langage de composition typographique largement utilisé pour la création de documents scientifiques, académiques et techniques. Fondée en 2012, Overleaf facilite la rédaction et la publication de documents de haute qualité en offrant des outils de collaboration en temps réel, une interface conviviale et une compilation instantanée des documents LaTeX.
+
+# Discord
+https://discord.com
+Discord est une plateforme de communication en ligne qui permet aux utilisateurs de créer, de rejoindre et de participer à des serveurs virtuels, où ils peuvent discuter par texte, voix et vidéo avec d'autres membres. Le service a été créé en 2015 et est devenu rapidement l'une des principales plateformes de communication pour les gamers, mais il est également utilisé par des communautés, des amis, des équipes de travail et d'autres groupes pour rester en contact et collaborer.
