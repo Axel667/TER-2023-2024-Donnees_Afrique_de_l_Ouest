@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{tabularx}
+\usepackage{geometry}
+\usepackage{booktabs}
+
+% Set page margins
+\geometry{left=25mm,right=25mm,top=20mm,bottom=20mm}
+
+\title{Réflexion et Planification du Pipeline sur la partie entre le prétraitement textuel et la géolocalisation des articles:}
+\author{Ivan Can Arisoy}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Les Étapes Principales}
+
+\section{Acquisition des données}
+
+\section{Traitement des Données Textuelles}
+Préparation des données textuelles à l'analyse. Les étapes sont les suivantes:
+\begin{itemize}
+\item Tokenization: Découpage du texte en mots ou en phrases.
+\item Lemmatization: Réduction des mots à leur racine.
+\item Stopword Removal: Élimination des mots très courants qui n'apportent pas de valeur ajoutée pour l'analyse.
+\item Vectorization (TF-IDF): Transformation du texte en valeurs numériques pour faciliter le traitement par les algorithmes d'apprentissage automatique.
+\end{itemize}
+
+\section{Filtrage de Pertinence}
+Nous utiliserons le Word Embedding avec Word2Vec pour évaluer la pertinence des articles. Une similarité sémantique sera calculée, avec un seuil défini pour ne retenir que les articles les plus pertinents.
+
+\section{Modélisation des Sujets}
+Nous appliquerons des méthodes de modélisation de sujets pour classifier les thèmes dans notre collection d'articles. La vérification automatisée des sujets sera assurée par un classificateur personnalisé formé sur des sujets étiquetés, avec la possibilité d'utiliser BERT pour une intégration contextuelle plus précise.
+
+\section{Analyse de géolocalisation améliorée}
+Pour mieux comprendre la répartition géographique des discussions sur la sécurité alimentaire, nous utiliserons :
+\begin{itemize}
+\item Reconnaissance d'entités nommées (NER) : pour identifier les lieux mentionnés dans les textes et Hugging Face’s Transformers (CamemBERT)
+\item Association d'emplacement au niveau de la phrase/du paragraphe.
+\item Géocodage: pour convertir les noms de lieux en coordonnées géographiques.
+\end{itemize}
+
+\section{Analyse de séries chronologiques pour la dynamique temporelle}
+Nous intégrerons une dimension temporelle en extrayant les dates des articles et en analysant les tendances au fil du temps..
+
+
+\section*{Enrichissement du Lexique}
+Il existe peu de vocabulaire du lexique de la sécurité alimentaire en Français disponible sur Internet. Une solution consisterait à enrichir le lexique manuellement en ajoutant des mots au dictionnaire. On pourrait également envisager le « web scraping » pour compléter notre lexique.
+
+
+\section*{Planification des Tâches}
+
+\begin{tabularx}{\textwidth}{@{}lXr@{}}
+\toprule
+\textbf{Étape} & \textbf{Description} & \textbf{Dates} \\
+\midrule
+1. Traitement des Données Textuelles & 
+Tokenization: 1 jour\newline
+Lemmatization: 1 jour\newline
+Suppression des mots vides: 1 jour\newline
+Vectorisation (TF-IDF): 1 jour & 
+07/11 - 11/11 \\
+\midrule
+3. Filtrage de Pertinence & 
+Configuration de Word2Vec et évaluation de pertinence: 1 jours & 
+11/11 \\
+\midrule
+4. Modélisation des Sujets & 
+Configuration et entraînement de LDA: 2 jours\newline
+Vérification automatisée des sujets: 1 jour & 
+11/11 - 13/11 \\
+\midrule
+5. Analyse de Géolocalisation Améliorée & 
+Configuration de NER (CamemBERT) et géocodage: 2 jours\newline
+Association d'emplacement au niveau de la phrase/du paragraphe: 1 jour & 
+14/11 - 16/11 \\
+\midrule
+6. Analyse de Séries Chronologiques pour la Dynamique Temporelle & 
+Extraction des dates et analyse temporelle: 1 jours & 
+17/11 \\
+\midrule
+7. Développement de l'Indicateur TXT-FS & 
+Calcul de la similarité sémantique: 1 jours\newline
+Agrégation et analyse au niveau provincial: 1 jour & 
+17/11 \\
+\bottomrule
+\end{tabularx}
+
+
+\end{document}
