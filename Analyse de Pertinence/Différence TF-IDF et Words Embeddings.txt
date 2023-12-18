@@ -1,0 +1,27 @@
+Points clés:
+
+1. Tokenisation avec FlauBERT : 
+   - Lorsque nous utilisons les embeddings de FlauBERT, la tokenisation est en fait intégrée dans le processus d'obtention des embeddings. La méthode `tokenizer.encode` s'occupe de la tokenisation nécessaire pour préparer les données pour le modèle FlauBERT.
+   - Cette tokenisation est spécifique au modèle et diffère de la tokenisation de texte standard.
+
+2. Lemmatization :
+   - La lemmatisation est souvent utilisée dans les approches de traitement de texte classiques (comme TF-IDF) pour réduire les mots à leur forme de base. Cela aide à réduire la dimensionnalité et à concentrer l'analyse sur le sens de base des mots.
+   - Avec les embeddings de FlauBERT, chaque token (y compris les formes fléchies des mots) reçoit un vecteur riche en informations qui capture le contexte et la signification. Cela rend la lemmatisation moins cruciale, car le modèle est capable de comprendre les nuances entre différentes formes d'un même mot.
+
+Si on souhaite tout de même inclure la lemmatisation pour une raison spécifique, vous pouvez l'ajouter avant la vectorisation avec FlauBERT. Cependant, gardez à l'esprit que cela pourrait ne pas être nécessaire ou même souhaitable, car cela pourrait enlever certaines des nuances que les embeddings de FlauBERT sont capables de capturer.
+
+En résumé, dans le contexte des embeddings de FlauBERT, la tokenisation spécifique au modèle est automatiquement gérée, et la lemmatisation n'est généralement pas requise. Si vos besoins d'analyse nécessitent une lemmatisation spécifique, vous devriez réévaluer si l'utilisation des embeddings de FlauBERT est l'approche optimale pour votre cas d'utilisation.
+
+La suppression des mots vides (stopword removal) dans le contexte des embeddings de FlauBERT est également un sujet qui mérite une réflexion particulière. Voici quelques points à considérer :
+
+1. Stopwords dans les Modèles de Langage Transformer : 
+   - Les modèles de langage basés sur les transformers, tels que FlauBERT, sont formés sur de larges corpus de texte et apprennent des représentations riches et contextuelles des mots. Ces modèles comprennent le contexte dans lequel les mots, y compris les mots vides, sont utilisés.
+   - Supprimer les mots vides avant de passer le texte à FlauBERT pourrait en fait altérer le contexte et la structure de la phrase, ce qui pourrait affecter la qualité des embeddings générés.
+
+2. Importance Contextuelle : 
+   - Dans l'analyse de texte classique (comme avec TF-IDF), les mots vides sont souvent supprimés car ils sont considérés comme ne portant pas de signification importante. Cependant, dans les embeddings contextuels, les mots vides peuvent contribuer à la compréhension du contexte global d'une phrase ou d'un paragraphe.
+
+3. Approche Recommandée : 
+   - Avec FlauBERT, il est généralement recommandé de ne pas supprimer les mots vides avant de générer les embeddings. Les mots vides sont une partie intégrale du langage et contribuent à la structure et au sens des phrases dans le contexte des modèles basés sur les transformers.
+
+En résumé, la suppression des mots vides n'est pas nécessaire et n'est généralement pas recommandée lorsque vous utilisez FlauBERT pour la génération d'embeddings. Les mots vides jouent un rôle important dans la compréhension du contexte par le modèle, ce qui est crucial pour la création d'embeddings de haute qualité.
